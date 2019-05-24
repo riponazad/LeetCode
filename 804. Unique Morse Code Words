@@ -1,0 +1,43 @@
+class Solution {
+public:
+    int uniqueMorseRepresentations(vector<string>& words) {
+        map<char, string>transformer;
+        transformer['a']=".-";
+        transformer['b']="-...";
+        transformer['c']="-.-.";
+        transformer['d']="-..";
+        transformer['e']=".";
+        transformer['f']="..-.";
+        transformer['g']="--.";
+        transformer['h']="....";
+        transformer['i']="..";
+        transformer['j']=".---";
+        transformer['k']="-.-";
+        transformer['l']=".-..";
+        transformer['m']="--";
+        transformer['n']="-.";
+        transformer['o']="---";
+        transformer['p']=".--.";
+        transformer['q']="--.-";
+        transformer['r']=".-.";
+        transformer['s']="...";
+        transformer['t']="-";
+        transformer['u']="..-";
+        transformer['v']="...-";
+        transformer['w']=".--";
+        transformer['x']="-..-";
+        transformer['y']="-.--";
+        transformer['z']="--..";
+        set<string>transformed_words;
+        for(int i =0; i<words.size();i++)
+        {
+            string temp;
+            for(int j=0; j<words[i].length();j++)
+            {
+                temp+=transformer[words[i][j]];
+            }
+            transformed_words.insert(temp);
+        }
+        return transformed_words.size();
+    }
+};
