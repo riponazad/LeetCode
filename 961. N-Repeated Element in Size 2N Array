@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int repeatedNTimes(vector<int>& A) {
+        bool check[10001]={0};
+        for(int a : A)
+        {
+            if(check[a]==0)
+                check[a]=1;
+            else
+                return a;
+        }
+        return 0;
+    }
+};
